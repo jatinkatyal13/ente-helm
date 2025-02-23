@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ente-museum
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: ente-museum
+  template:
+    metadata:
+      labels:
+        app: ente-museum
+    spec:
+      serviceAccountName: ente-museum-sa
+      containers:
+        - name: museum
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: "/data"
+              name: museum-storage
+      volumes:
+        - name: museum-storage
+          persistentVolumeClaim:
+            claimName: ente-museum-pvc

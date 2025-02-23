@@ -1,0 +1,22 @@
+# Ignore Helm chart directories
+charts/
+tmpcharts/
+charts.lock
+
+# Ignore Helm release files
+releases/
+
+# Ignore Helm test output
+tests/
+
+# Ignore Helm package files
+*.tgz
+
+# Ignore Helm lint output
+.lint/
+
+# Ignore Helm plugin files
+plugins/
+
+# Ignore Helm cache files
+.cache/

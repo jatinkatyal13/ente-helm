@@ -1,0 +1,20 @@
+# @section General parameters
+replicaCount: 1 # Number of replicas
+
+# @section Image parameters
+image:
+  repository: ghcr.io/ente-io/museum # Image repository
+  tag: latest # Image tag
+  pullPolicy: IfNotPresent # Image pull policy
+
+# @section Service parameters
+service:
+  type: ClusterIP # Kubernetes service type
+  port: 8080 # Service port
+
+# @section Persistence parameters
+persistence:
+  enabled: true # Enable persistence
+  storageClass: longhorn # Storage class for persistent volume
+  accessMode: ReadWriteOnce # Access mode for persistent volume
+  size: 10Gi # Size of persistent volume
