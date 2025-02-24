@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ente-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-24T18:49:37.766579887Z"
+    description: A Helm chart for Kubernetes
+    digest: fe3b842a3d79ad3d5f966b03ed2a2b11351df56b0792cd630460b1f95ee2b625
+    name: ente-helm
+    type: application
+    urls:
+    - https://jatinkatyal13.github.io/ente-helm/ente-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-24T18:49:37.765730081Z"
