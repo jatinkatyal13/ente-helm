@@ -17,22 +17,17 @@ jobs:
         uses: azure/setup-helm@v1
 
       - name: Build Helm chart
-        run: helm package .
-
-      - name: Create gh-pages branch
-        run: |
-          git config --global user.email "jatin.katyal13@gmail.com"
-          git config --global user.name "Jatin Katyal"
-          git checkout --orphan gh-pages
-          git reset --hard
-          git commit --allow-empty -m "Initialize gh-pages branch"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jatinkatyal13/ente-helm.git gh-pages
+        run: ls && helm package .
 
       - name: Publish Helm chart to GitHub Pages
         run: |
-          mkdir -p docs
-          mv *.tgz docs/
-          helm repo index docs --url https://jatinkatyal13.github.io/ente-helm/
-          git add docs/
+          git config --global user.email "jatin.katyal13@gmail.com"
+          git config --global user.name "Jatin Katyal"
+          git pull --rebase origin gh-pages
+          git checkout gh-pages
+
+          helm repo index . --url https://jatinkatyal13.github.io/ente-helm/
+
+          git add . 
           git commit -m "Publish Helm chart"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jatinkatyal13/ente-helm.git gh-pages

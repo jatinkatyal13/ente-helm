@@ -2,7 +2,20 @@
 
 ## Introduction
 
-Ente Helm is a project that provides Helm charts for deploying applications. Helm is a package manager for Kubernetes that allows you to define, install, and upgrade even the most complex Kubernetes applications.
+This repository contains Helm charts for deploying various applications and services on my personal Raspberry Pi cluster. The cluster is part of my home lab setup, allowing me to experiment with Kubernetes and Helm in a controlled environment. These charts are tailored to run efficiently on ARM architecture, making them ideal for Raspberry Pi devices.
+
+## Deploy the Helm Chart
+
+1. Add the Helm repo:
+    ```sh
+    helm repo add ente-helm https://jatinkatyal13.github.io/ente-helm/
+    helm repo update
+    ```
+
+2. Install the chart with the release name `my-release`:
+    ```sh
+    helm install my-release ente-helm/ente-helm
+    ```
 
 ## How to Run Helmdocs and Generate Docs
 
