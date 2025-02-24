@@ -3,7 +3,7 @@ replicaCount: 1 # Number of replicas
 
 # @section Image parameters
 image:
-  repository: ghcr.io/ente-io/museum # Image repository
+  repository: ghcr.io/ente-io/server # Image repository
   tag: latest # Image tag
   pullPolicy: IfNotPresent # Image pull policy
 
