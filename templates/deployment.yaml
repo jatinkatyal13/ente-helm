@@ -19,10 +19,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
+          env:
+            - name: ENVIRONMENT
+              value: "production"
           volumeMounts:
             - mountPath: "/data"
               name: museum-storage
+            - mountPath: "/configurations/production.yaml"
+              subPath: production.yaml
+              name: ente-config
       volumes:
         - name: museum-storage
           persistentVolumeClaim:
             claimName: ente-museum-pvc
+        - name: ente-config
+          secret:
+            secretName: ente-config-secret

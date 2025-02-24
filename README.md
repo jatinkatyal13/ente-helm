@@ -1,5 +1,5 @@
 # Ente Helm
-
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 ## Introduction
 
 This repository contains Helm charts for deploying various applications and services on my personal Raspberry Pi cluster. The cluster is part of my home lab setup, allowing me to experiment with Kubernetes and Helm in a controlled environment. These charts are tailored to run efficiently on ARM architecture, making them ideal for Raspberry Pi devices.
@@ -16,6 +16,22 @@ This repository contains Helm charts for deploying various applications and serv
     ```sh
     helm install my-release ente-helm/ente-helm
     ```
+
+## Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| image.pullPolicy | string | `"IfNotPresent"` |  |
+| image.repository | string | `"ghcr.io/ente-io/server"` |  |
+| image.tag | string | `"latest"` |  |
+| persistence.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.enabled | bool | `true` |  |
+| persistence.size | string | `"10Gi"` |  |
+| persistence.storageClass | string | `"longhorn"` |  |
+| replicaCount | int | `1` |  |
+| service.port | int | `8080` |  |
+| service.type | string | `"ClusterIP"` |  |
+
 
 ## How to Run Helmdocs and Generate Docs
 
