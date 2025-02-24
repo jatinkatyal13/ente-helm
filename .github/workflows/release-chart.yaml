@@ -26,7 +26,7 @@ jobs:
           git checkout --orphan gh-pages
           git reset --hard
           git commit --allow-empty -m "Initialize gh-pages branch"
-          git push origin gh-pages
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jatinkatyal13/ente-helm.git gh-pages
 
       - name: Publish Helm chart to GitHub Pages
         run: |
@@ -35,4 +35,4 @@ jobs:
           helm repo index docs --url https://jatinkatyal13.github.io/ente-helm/
           git add docs/
           git commit -m "Publish Helm chart"
-          git push origin gh-pages
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jatinkatyal13/ente-helm.git gh-pages
