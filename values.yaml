@@ -18,3 +18,7 @@ persistence:
   storageClass: longhorn # Storage class for persistent volume
   accessMode: ReadWriteOnce # Access mode for persistent volume
   size: 10Gi # Size of persistent volume
+
+# @section Configuration parameters
+ente:
+  config: "{}" # JSON configuration for Ente
