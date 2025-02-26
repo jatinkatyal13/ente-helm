@@ -1,5 +1,5 @@
 # Ente Helm
-![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 ## Introduction
 
 This repository contains Helm charts for deploying various applications and services on my personal Raspberry Pi cluster. The cluster is part of my home lab setup, allowing me to experiment with Kubernetes and Helm in a controlled environment. These charts are tailored to run efficiently on ARM architecture, making them ideal for Raspberry Pi devices.
