@@ -26,7 +26,6 @@ spec:
             - mountPath: "/data"
               name: museum-storage
             - mountPath: "/configurations"
-              subPath: "production.yaml"
               name: ente-config
       volumes:
         - name: museum-storage
